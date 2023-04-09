@@ -4,10 +4,10 @@ import (
 	"testing"
 )
 
-func TestEncode(t *testing.T){
-	tests := []struct{
-		name string
-		src []byte
+func TestEncode(t *testing.T) {
+	tests := []struct {
+		name       string
+		src        []byte
 		encodedSrc string
 	}{
 		{
@@ -52,10 +52,10 @@ func TestEncode(t *testing.T){
 		},
 	}
 
-	for _,tt := range tests {
-		t.Run(tt.name,func(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
 			if got := StdEncoding.EncodeToString(tt.src); got != tt.encodedSrc {
-				t.Fatalf("expect %s, but actual %s",tt.encodedSrc,got)
+				t.Fatalf("expect %s, but actual %s", tt.encodedSrc, got)
 			}
 		})
 	}
